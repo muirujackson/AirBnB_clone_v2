@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 The AirBnB clone with MySQL refers to a project or application built as a replica or imitation of the popular accommodation rental platform, Airbnb, using the MySQL database as the backend.
 
 The purpose of creating an AirBnB clone with MySQL is to develop a similar system that allows users to list, search, and book accommodations. The project typically involves designing and implementing a database schema using MySQL to store the necessary data, along with a server-side application to handle user interactions.
@@ -42,4 +41,3 @@ Reviews and Ratings: Users can leave reviews and ratings for the accommodations 
 Admin Panel: An administrative panel is typically included to manage the system. The admin panel allows administrators to view and manage user accounts, listings, bookings, reviews, and other system-related data. The admin actions are handled by the server-side application, which interacts with the MySQL database.
 
 Overall, the AirBnB clone with MySQL involves building a web application that mimics the core functionality of Airbnb. It utilizes MySQL as the database to store and retrieve data related to users, listings, bookings, reviews, and other entities. The server-side application handles user interactions, processes search queries, manages bookings, and communicates with the MySQL database to provide the desired functionality to users.
->>>>>>> aa30ddafbf00c509cc2e80477b2410f1ae5452f9
