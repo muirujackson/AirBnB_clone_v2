@@ -37,10 +37,11 @@ def do_deploy(archive_path):
         run('sudo mkdir -p {}{}/'.format(path, no_excep))
         run('sudo tar -xzf /tmp/{} -C {}{}/'.format(filename, path, no_excep))
         run('sudo rm /tmp/{}'.format(filename))
-        run('sudo mv {0}{1}/web_static/* {0}{1}/'.format(path, no_excep))
+        run('sudo mv -f {0}{1}/web_static/* {0}{1}/'.format(path, no_excep))
         run('sudo rm -rf {}{}/web_static'.format(path, no_excep))
         run('sudo rm -rf /data/web_static/current')
         run('sudo ln -s {}{}/ /data/web_static/current'.format(path, no_excep))
+        run('echo "New version deployed!"')
         return True
     except BaseException:
         return False
