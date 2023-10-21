@@ -2,6 +2,7 @@
 """ create a script that starts a Flask web application """
 
 
+from markupsafe import escape
 from flask import Flask
 
 app = Flask(__name__)
@@ -23,7 +24,7 @@ def hbnb():
 def display_c(text):
     """ Replace underscores with spaces in the 'text' variable """
     text = text.replace('_', ' ')
-    return f"C {text}"
+    return f"C {escape(text)}"
 
 
 if __name__ == '__main__':
