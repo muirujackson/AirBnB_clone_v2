@@ -19,10 +19,12 @@ def hbnb():
     """ This method diplay 'HBNB' """
     return "HBNB"
 
-@app.route('/c/<text>', strct_slashe=False)
+
+@app.route('/c/<text>', strict_slashe=False)
 def ctext(text):
     """ this method 'c' followed by value of text """
     return f"C {escape(text)}"
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
