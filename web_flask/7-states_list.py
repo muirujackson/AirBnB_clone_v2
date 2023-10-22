@@ -22,7 +22,8 @@ def close_storage(exception):
 def states_list():
     """Display a list of State objects from the database."""
     states = storage.all(State).values()
-    return render_template('7-states_list.html', states=states)
+    sorted_states = sorted(states, key=lambda state: state.name)
+    return render_template('7-states_list.html', states=sorted_states)
 
 
 # Configure the application to listen on 0.0.0.0 and port 5000
