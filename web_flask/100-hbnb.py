@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """hbnb filter
 """
-from flask import Flask, render_template
+from flask import Flask, render_template, Markup
 from models import storage
+import sys
 app = Flask(__name__)
 
 
@@ -13,7 +14,7 @@ def shutdown_session(exception=None):
     storage.close()
 
 
-@app.route("/hbnb_filters", strict_slashes=False)
+@app.route("/hbnb", strict_slashes=False)
 def states_cities_list():
     """pass states and cities sorted by name
     and amenities
@@ -24,10 +25,15 @@ def states_cities_list():
         state.cities.sort(key=lambda x: x.name)
     amenities = list(storage.all("Amenity").values())
     amenities.sort(key=lambda x: x.name)
+    places = list(storage.all("Place").values())
+    places.sort(key=lambda x: x.name)
+    for place in places:
+        place.description = Markup(place.description)
     return render_template(
-        '10-hbnb_filters.html',
+        '100-hbnb.html',
         states=states,
-        amenities=amenities
+        amenities=amenities,
+        places=places
     )
 
 
